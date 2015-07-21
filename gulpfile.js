@@ -31,7 +31,7 @@ var requireJsRuntimeConfig = vm.runInNewContext(fs.readFileSync('src/app/require
 
 // Compile all .ts files, producing .js and source map files alongside them
 gulp.task('ts', function() {
-    return gulp.src(['**/*.ts'])
+    return gulp.src(['**/*.ts','!node_modules/typescript/*.ts'])
         .pipe(typescript({
             module: 'amd',
             sourcemap: true,
